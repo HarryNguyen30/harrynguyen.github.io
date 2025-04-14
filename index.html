@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Cybersecurity & AI Portfolio</title>
     <style>
         /* Reset and base styles */
         * {
@@ -15,8 +15,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: #d1d5db;
+            background-color: #0f172a;
         }
         
         /* Container */
@@ -29,13 +29,14 @@
         
         /* Header */
         header {
-            background-color: #2c3e50;
+            background-color: #0c1120;
             color: #fff;
             padding: 20px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid #1e293b;
         }
         
         nav {
@@ -47,6 +48,8 @@
         .logo {
             font-size: 28px;
             font-weight: 700;
+            color: #10b981; /* Modern tech green */
+            text-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
         }
         
         .menu {
@@ -59,14 +62,15 @@
         }
         
         .menu a {
-            color: #fff;
+            color: #d1d5db;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
         
         .menu a:hover {
-            color: #3498db;
+            color: #10b981;
+            text-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
         }
         
         /* Hero Section */
@@ -74,9 +78,12 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background-color: #34495e;
+            background-color: #131e33;
             color: #fff;
             position: relative;
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7)), url("/api/placeholder/1200/600");
+            background-size: cover;
+            background-position: center;
         }
         
         .hero-content {
@@ -86,26 +93,38 @@
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
+            color: #fff;
         }
         
         .hero p {
             font-size: 20px;
             margin-bottom: 30px;
+            color: #94a3b8;
+        }
+        
+        .highlight {
+            color: #10b981;
+            text-shadow: 0 0 5px rgba(16, 185, 129, 0.3);
         }
         
         .btn {
             display: inline-block;
-            background-color: #3498db;
-            color: #fff;
+            background-color: #10b981;
+            color: #0f172a;
             padding: 12px 30px;
-            border-radius: 30px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 1px solid #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
         }
         
         .btn:hover {
-            background-color: #2980b9;
+            background-color: transparent;
+            color: #10b981;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
         }
         
         /* About Section */
@@ -123,6 +142,7 @@
             position: relative;
             padding-bottom: 15px;
             margin-bottom: 15px;
+            color: #f1f5f9;
         }
         
         .section-title h2::after {
@@ -132,8 +152,13 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 4px;
-            background-color: #3498db;
+            height: 3px;
+            background-color: #10b981;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+        
+        .section-title p {
+            color: #94a3b8;
         }
         
         .about-content {
@@ -144,14 +169,17 @@
         
         .about-img {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
+            border: 2px solid #1e293b;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
         }
         
         .about-img img {
             width: 100%;
             height: auto;
             display: block;
+            filter: brightness(0.9) contrast(1.1);
         }
         
         .about-text {
@@ -161,11 +189,12 @@
         .about-text h3 {
             font-size: 24px;
             margin-bottom: 15px;
+            color: #f1f5f9;
         }
         
         /* Skills Section */
         .skills {
-            background-color: #f5f5f5;
+            background-color: #131e33;
         }
         
         .skills-container {
@@ -175,21 +204,35 @@
         }
         
         .skill {
-            background-color: #fff;
+            background-color: #1e293b;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
+            border: 1px solid #334155;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(16, 185, 129, 0.3);
+            border-color: #10b981;
         }
         
         .skill-icon {
-            font-size: 30px;
+            font-size: 35px;
             margin-bottom: 15px;
-            color: #3498db;
+            color: #10b981;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
         }
         
         .skill h3 {
             margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+        
+        .skill p {
+            color: #94a3b8;
         }
         
         /* Projects Section */
@@ -200,46 +243,68 @@
         }
         
         .project {
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #1e293b;
+            background-color: #1e293b;
         }
         
         .project:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
         }
         
         .project-img {
             position: relative;
             height: 200px;
-            background-color: #ddd;
+            background-color: #0c1120;
+            overflow: hidden;
+        }
+        
+        .project-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.8));
+            z-index: 1;
         }
         
         .project-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            filter: grayscale(30%) brightness(0.8) contrast(1.1);
+            transition: transform 0.5s;
+        }
+        
+        .project:hover .project-img img {
+            transform: scale(1.05);
         }
         
         .project-content {
             padding: 20px;
-            background-color: #fff;
         }
         
         .project-content h3 {
             margin-bottom: 10px;
+            color: #f1f5f9;
         }
         
         .project-content p {
             margin-bottom: 15px;
-            color: #666;
+            color: #94a3b8;
         }
         
         /* Contact Section */
         .contact {
-            background-color: #34495e;
-            color: #fff;
+            background-color: #0c1120;
+            color: #d1d5db;
         }
         
         .contact-container {
@@ -254,21 +319,29 @@
         
         .contact-info h3 {
             margin-bottom: 15px;
+            color: #f1f5f9;
         }
         
         .contact-info p {
             margin-bottom: 10px;
+            color: #94a3b8;
+        }
+        
+        .contact-info p i {
+            margin-right: 10px;
+            color: #10b981;
         }
         
         .contact-form {
-            background-color: #fff;
+            background-color: #1e293b;
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 8px;
+            border: 1px solid #334155;
         }
         
         .contact-form h3 {
             margin-bottom: 20px;
-            color: #333;
+            color: #f1f5f9;
         }
         
         .form-group {
@@ -278,9 +351,18 @@
         .form-control {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ddd;
+            background-color: #0f172a;
+            border: 1px solid #334155;
             border-radius: 5px;
             font-size: 16px;
+            color: #d1d5db;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
         }
         
         textarea.form-control {
@@ -290,10 +372,11 @@
         
         /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: #fff;
+            background-color: #0c1120;
+            color: #d1d5db;
             padding: 30px 0;
             text-align: center;
+            border-top: 1px solid #1e293b;
         }
         
         .social-links {
@@ -303,14 +386,63 @@
         }
         
         .social-links a {
-            color: #fff;
+            color: #94a3b8;
             margin: 0 10px;
             font-size: 24px;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #1e293b;
+            border: 1px solid #334155;
         }
         
         .social-links a:hover {
-            color: #3498db;
+            color: #10b981;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+            border-color: #10b981;
+        }
+        
+        .footer-text {
+            color: #64748b;
+        }
+        
+        /* Binary Background Animation */
+        .binary-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.05;
+        }
+        
+        .binary-column {
+            position: absolute;
+            width: 20px;
+            top: -20%;
+            color: #10b981;
+            font-family: monospace;
+            font-size: 12px;
+            text-align: center;
+            animation-name: fall;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(1000%);
+            }
         }
         
         /* Responsive Design */
@@ -334,11 +466,16 @@
     </style>
 </head>
 <body>
+    <!-- Binary Background Animation -->
+    <div class="binary-bg">
+        <!-- Binary columns will be added with JavaScript -->
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <div class="logo">My Portfolio</div>
+                <div class="logo">SEC<span class="highlight">AI</span>SHIELD</div>
                 <ul class="menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -354,9 +491,9 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm [Your Name]</h1>
-                <p>A passionate [Your Profession] specializing in [Your Specialization]</p>
-                <a href="#contact" class="btn">Get In Touch</a>
+                <h1>[Your Name] <span class="highlight">|</span> Cybersecurity & AI Professional</h1>
+                <p>Securing digital landscapes through advanced AI-powered threat detection and prevention systems</p>
+                <a href="#contact" class="btn">Connect Securely →</a>
             </div>
         </div>
     </section>
@@ -366,17 +503,17 @@
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
-                <p>Learn more about me and my background</p>
+                <p>My journey in digital security and artificial intelligence</p>
             </div>
             <div class="about-content">
                 <div class="about-img">
                     <img src="/api/placeholder/400/400" alt="Profile Picture">
                 </div>
                 <div class="about-text">
-                    <h3>Professional Profile</h3>
-                    <p>Hello! I'm [Your Name], a [Your Profession] with [X years] of experience in [Your Industry]. I specialize in [Your Specialization] and have a passion for [Your Interest].</p>
-                    <p>Throughout my career, I've worked on various projects that have allowed me to develop strong skills in [Your Key Skill Areas]. I'm always eager to take on new challenges and continue growing professionally.</p>
-                    <p>When I'm not working, you can find me [Your Hobbies/Interests].</p>
+                    <h3>Security Expert & AI Specialist</h3>
+                    <p>Hello! I'm [Your Name], a <span class="highlight">Cybersecurity Professional</span> with [X years] of experience protecting critical systems and data from emerging threats. I specialize in integrating <span class="highlight">AI-powered security solutions</span> to stay ahead of evolving attack vectors.</p>
+                    <p>My expertise includes penetration testing, threat analysis, security architecture, machine learning for anomaly detection, and developing advanced security frameworks that leverage the latest in artificial intelligence.</p>
+                    <p>I'm passionate about creating robust security solutions that protect organizations while enabling innovation and growth in our increasingly connected world.</p>
                 </div>
             </div>
         </div>
@@ -386,29 +523,29 @@
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-title">
-                <h2>My Skills</h2>
-                <p>What I can bring to the table</p>
+                <h2>Technical Expertise</h2>
+                <p>Specialized skills in cybersecurity and artificial intelligence</p>
             </div>
             <div class="skills-container">
                 <div class="skill">
+                    <div class="skill-icon">🔒</div>
+                    <h3>Threat Intelligence</h3>
+                    <p>Advanced threat hunting, zero-day vulnerability research, APT detection</p>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>Anomaly detection, predictive analytics, neural networks, ML frameworks</p>
+                </div>
+                <div class="skill">
+                    <div class="skill-icon">🛡️</div>
+                    <h3>Security Architecture</h3>
+                    <p>Zero-trust models, secure cloud infrastructure, endpoint protection</p>
+                </div>
+                <div class="skill">
                     <div class="skill-icon">💻</div>
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, React, Node.js</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">🎨</div>
-                    <h3>Design</h3>
-                    <p>UI/UX, Figma, Adobe Creative Suite</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">📊</div>
-                    <h3>Data Analysis</h3>
-                    <p>Excel, SQL, Python, Tableau</p>
-                </div>
-                <div class="skill">
-                    <div class="skill-icon">📱</div>
-                    <h3>Mobile Development</h3>
-                    <p>React Native, Swift, Flutter</p>
+                    <h3>Secure Development</h3>
+                    <p>DevSecOps, secure coding, SAST/DAST, container security</p>
                 </div>
             </div>
         </div>
@@ -418,37 +555,37 @@
     <section id="projects">
         <div class="container">
             <div class="section-title">
-                <h2>My Projects</h2>
-                <p>Check out some of my recent work</p>
+                <h2>Security Projects</h2>
+                <p>Recent work in cybersecurity and AI implementations</p>
             </div>
             <div class="projects-container">
                 <div class="project">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/300" alt="Project 1">
+                        <img src="/api/placeholder/400/300" alt="AI Security Project">
                     </div>
                     <div class="project-content">
-                        <h3>Project Name 1</h3>
-                        <p>Short description of the project. Explain what technologies you used and what problem you solved.</p>
+                        <h3>AI-Powered Threat Detection</h3>
+                        <p>Developed a machine learning system that identifies potential security threats and intrusion attempts in real-time with 99.7% accuracy.</p>
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/300" alt="Project 2">
+                        <img src="/api/placeholder/400/300" alt="Zero Trust Framework">
                     </div>
                     <div class="project-content">
-                        <h3>Project Name 2</h3>
-                        <p>Short description of the project. Explain what technologies you used and what problem you solved.</p>
+                        <h3>Zero Trust Security Framework</h3>
+                        <p>Designed and implemented a comprehensive zero trust architecture for a Fortune 500 company, reducing security incidents by 78%.</p>
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
                 <div class="project">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/300" alt="Project 3">
+                        <img src="/api/placeholder/400/300" alt="Blockchain Security">
                     </div>
                     <div class="project-content">
-                        <h3>Project Name 3</h3>
-                        <p>Short description of the project. Explain what technologies you used and what problem you solved.</p>
+                        <h3>Blockchain Security Analysis</h3>
+                        <p>Created an automated security audit system for smart contracts that identifies vulnerabilities before deployment.</p>
                         <a href="#" class="btn">View Project</a>
                     </div>
                 </div>
@@ -460,18 +597,18 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact Me</h2>
-                <p>Let's get in touch</p>
+                <h2>Secure Contact</h2>
+                <p>Let's discuss how I can strengthen your security posture</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p>Email: your.email@example.com</p>
-                    <p>Phone: +1 (123) 456-7890</p>
-                    <p>Location: Your City, Country</p>
+                    <p><i>📧</i> secure.email@example.com</p>
+                    <p><i>🔐</i> PGP Key: 0xF721A8C9</p>
+                    <p><i>🌐</i> Remote / Global</p>
                 </div>
                 <div class="contact-form">
-                    <h3>Send Me a Message</h3>
+                    <h3>Send an Encrypted Message</h3>
                     <form>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Your Name" required>
@@ -485,7 +622,7 @@
                         <div class="form-group">
                             <textarea class="form-control" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn">Securely Send</button>
                     </form>
                 </div>
             </div>
@@ -496,13 +633,48 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="#">📱</a>
+                <a href="#">👤</a>
                 <a href="#">💻</a>
-                <a href="#">📸</a>
+                <a href="#">🔒</a>
                 <a href="#">📊</a>
             </div>
-            <p>&copy; 2025 [Your Name]. All Rights Reserved.</p>
+            <p class="footer-text">&copy; 2025 [Your Name] | All communications protected with end-to-end encryption</p>
         </div>
     </footer>
+
+    <script>
+        // Create binary background animation
+        function createBinaryBackground() {
+            const binaryBg = document.querySelector('.binary-bg');
+            const screenWidth = window.innerWidth;
+            const columns = Math.floor(screenWidth / 25);
+            
+            for (let i = 0; i < columns; i++) {
+                const column = document.createElement('div');
+                column.className = 'binary-column';
+                column.style.left = (i * 25) + 'px';
+                
+                // Random animation duration between 20 and 40 seconds
+                const duration = Math.random() * 20 + 20;
+                column.style.animationDuration = `${duration}s`;
+                
+                // Random animation delay
+                column.style.animationDelay = `${Math.random() * 10}s`;
+                
+                // Generate binary content
+                let binaryContent = '';
+                for (let j = 0; j < 50; j++) {
+                    binaryContent += Math.random() > 0.5 ? '1' : '0';
+                    binaryContent += '<br>';
+                }
+                column.innerHTML = binaryContent;
+                
+                binaryBg.appendChild(column);
+            }
+        }
+        
+        // Initialize the binary background after the page loads
+        window.addEventListener('load', createBinaryBackground);
+    </script>
 </body>
 </html>
