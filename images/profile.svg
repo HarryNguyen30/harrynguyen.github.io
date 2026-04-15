@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Profile placeholder">
+  <rect width="800" height="800" fill="#e6f4fb"/>
+  <circle cx="400" cy="300" r="140" fill="#7fb9d6"/>
+  <path d="M180 700c30-120 120-190 220-190s190 70 220 190" fill="#7fb9d6"/>
+  <text x="50%" y="760" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#003459">Add your real portrait here</text>
+</svg>
