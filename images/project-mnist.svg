@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="MNIST project placeholder">
-  <rect width="800" height="420" fill="#0f3d5e"/>
-  <g fill="#7fd2f5" font-family="monospace" font-size="24">
-    <text x="60" y="120">0 1 1 0 1 0 0 1</text>
-    <text x="60" y="170">1 1 0 0 1 1 0 0</text>
-    <text x="60" y="220">0 0 1 1 0 0 1 1</text>
-  </g>
-  <text x="50%" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff">MNIST Demo</text>
-</svg>
