@@ -1,10 +1,10 @@
 .card {
-  border: 1px solid #d8e8ef;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 16px;
   margin-top: 14px;
-  background: var(--white);
-  box-shadow: 0 6px 16px rgba(0, 52, 89, 0.08);
+  background: var(--surface);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
 }
 
 .row {
@@ -26,22 +26,23 @@ button {
   padding: 10px 14px;
   border: 0;
   border-radius: 8px;
-  background: var(--cerulean);
-  color: var(--white);
+  background: var(--accent);
+  color: var(--surface);
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.2s ease;
 }
 
 button:hover {
-  background: var(--fresh-sky);
+  background: #0a8c69;
 }
 
 button.secondary {
-  background: var(--deep-space-blue);
+  background: var(--surface-strong);
 }
 
 button.secondary:hover {
-  background: var(--cerulean);
+  background: var(--surface-alt);
 }
 
 button:disabled {
@@ -62,16 +63,16 @@ button:disabled {
 }
 
 .ok {
-  color: var(--deep-space-blue);
+  color: var(--text-strong);
 }
 
 .err {
-  color: #b91c1c;
+  color: #f87171;
   white-space: pre-wrap;
 }
 
 img {
-  border: 1px solid #d8e8ef;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   max-width: 160px;
   max-height: 160px;
@@ -81,15 +82,15 @@ img {
 .top3 {
   margin-top: 8px;
   font-size: 14px;
-  color: var(--ink-black);
+  color: var(--text);
 }
 
 canvas {
-  border: 2px solid var(--cerulean);
+  border: 2px solid var(--accent);
   border-radius: 8px;
   image-rendering: pixelated;
   touch-action: none;
-  box-shadow: inset 0 0 0 2px rgba(0, 126, 167, 0.08);
+  box-shadow: inset 0 0 0 2px rgba(16, 185, 129, 0.08);
 }
 
 details {
@@ -97,14 +98,14 @@ details {
 }
 
 summary {
-  color: var(--deep-space-blue);
+  color: var(--text-strong);
   cursor: pointer;
 }
 
 input[type="file"] {
-  border: 1px solid #d8e8ef;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   padding: 8px;
-  color: var(--ink-black);
-  background: var(--white);
+  color: var(--text);
+  background: var(--surface);
 }
