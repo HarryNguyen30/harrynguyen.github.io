@@ -197,6 +197,23 @@
   border: 0;
 }
 
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.contact-link img {
+  flex-shrink: 0;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--brand-700);
+}
+
 .skip-link,
 .sr-only {
   position: absolute;
