@@ -57,6 +57,7 @@
 .hero-photo-band {
   position: relative;
   min-height: calc(100vh - 64px);
+  min-height: calc(100dvh - 64px);
   display: flex;
   align-items: flex-end;
   background: var(--color-canvas);
@@ -66,13 +67,17 @@
 .hero-photo-band .hero-media {
   position: absolute;
   inset: 0;
-}
-
-.hero-photo-band .hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  background-color: var(--color-canvas);
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(0, 102, 177, 0.15) 0%,
+      rgba(28, 105, 212, 0.08) 50%,
+      rgba(226, 39, 24, 0.12) 100%
+    ),
+    linear-gradient(var(--color-surface-card) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-surface-card) 1px, transparent 1px);
+  background-size: 100% 100%, 80px 80px, 80px 80px;
 }
 
 .hero-photo-band .hero-overlay {
@@ -80,9 +85,9 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.95) 0%,
-    rgba(0, 0, 0, 0.6) 40%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.5) 45%,
+    rgba(0, 0, 0, 0.25) 100%
   );
 }
 
