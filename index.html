@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="Machine learning, AI engineering, and data science portfolio projects by Harry Nguyen.">
   <meta name="twitter:image" content="images/og-cover.svg">
 
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="images/profile.svg">
   <link rel="stylesheet" href="static/css/theme.css">
   <link rel="stylesheet" href="static/css/layout.css">
   <link rel="stylesheet" href="static/css/components.css">
@@ -28,11 +28,12 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header class="site-header" id="top">
+  <header class="top-nav" id="top">
     <div class="container">
       <nav class="site-nav" aria-label="Primary">
         <a class="logo" href="#home" aria-label="Go to homepage">
-          HARR<span class="highlight">Y</span>
+          <span class="logo-stripe" aria-hidden="true"></span>
+          Harry Nguyen
         </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-list">
           <span class="menu-icon" aria-hidden="true"></span>
@@ -50,35 +51,44 @@
   </header>
 
   <main id="main-content">
-    <section class="hero" id="home" aria-labelledby="hero-heading">
-      <div class="binary-bg" aria-hidden="true"></div>
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Available for internships and graduate opportunities</p>
-          <h1 id="hero-heading">Harry Nguyen <span class="highlight">Data Scientist & AI Engineer</span></h1>
-          <p class="lead">
-            I design and deploy machine learning systems that solve real-world problems, from model experimentation to API delivery.
-          </p>
-          <div class="hero-cta">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    <section class="hero-photo-band" id="home" aria-labelledby="hero-heading">
+      <div class="hero-media" aria-hidden="true">
+        <img src="images/hero-bg.svg" alt="" width="1920" height="1080">
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-inner container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="label-uppercase">Available for internships and graduate opportunities</p>
+            <h1 id="hero-heading">Harry Nguyen</h1>
+            <p class="lead">
+              Data Scientist &amp; AI Engineer — I design and deploy machine learning systems that solve real-world problems, from model experimentation to API delivery.
+            </p>
+            <div class="hero-cta">
+              <a href="#projects" class="button-primary">View Projects</a>
+              <a href="#contact" class="button-primary-outline">Contact Me</a>
+            </div>
           </div>
+          <aside class="hero-aside" aria-label="Quick profile">
+            <p class="label-uppercase">Profile</p>
+            <ul class="hero-facts">
+              <li>Master of Data Science &amp; Artificial Intelligence student</li>
+              <li>Bachelor of Information Technology graduate</li>
+              <li>Hands-on ML deployment using FastAPI, Docker, and Hugging Face</li>
+            </ul>
+          </aside>
         </div>
-        <aside class="hero-aside card" aria-label="Quick profile">
-          <ul class="hero-facts">
-            <li>Master of Data Science & Artificial Intelligence student</li>
-            <li>Bachelor of Information Technology graduate</li>
-            <li>Hands-on ML deployment using FastAPI, Docker, and Hugging Face</li>
-          </ul>
-        </aside>
       </div>
     </section>
+
+    <div class="m-stripe-divider" aria-hidden="true"></div>
 
     <section id="about" class="section" aria-labelledby="about-heading">
       <div class="container">
         <div class="section-title">
-          <h2 id="about-heading">About Me</h2>
-          <p>Building practical AI systems with clear product impact.</p>
+          <p class="label-uppercase">About</p>
+          <h2 id="about-heading">Building Practical AI Systems</h2>
+          <p>End-to-end machine learning with clear product impact — from data preparation through production integration.</p>
         </div>
         <div class="about-grid">
           <article class="card">
@@ -102,26 +112,50 @@
       </div>
     </section>
 
-    <section id="skills" class="section section-alt" aria-labelledby="skills-heading">
+    <section class="section" aria-label="Key metrics">
+      <div class="container">
+        <div class="spec-grid">
+          <div class="spec-cell">
+            <p class="spec-value">4+</p>
+            <p class="spec-label">Projects Deployed</p>
+          </div>
+          <div class="spec-cell">
+            <p class="spec-value">94%</p>
+            <p class="spec-label">Best Model Accuracy</p>
+          </div>
+          <div class="spec-cell">
+            <p class="spec-value">40</p>
+            <p class="spec-label">Food Classes Classified</p>
+          </div>
+          <div class="spec-cell">
+            <p class="spec-value">3</p>
+            <p class="spec-label">Live Demos Online</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section" aria-labelledby="skills-heading">
       <div class="container">
         <div class="section-title">
-          <h2 id="skills-heading">Technical Expertise</h2>
+          <p class="label-uppercase">Expertise</p>
+          <h2 id="skills-heading">Technical Stack</h2>
           <p>Tooling and methods I use to ship reliable ML solutions.</p>
         </div>
         <div class="skills-grid">
-          <article class="skill card">
+          <article class="skill-card">
             <h3>Machine Learning</h3>
             <p>Scikit-learn, PyTorch, TensorFlow, model tuning, and evaluation strategy.</p>
           </article>
-          <article class="skill card">
+          <article class="skill-card">
             <h3>Data Engineering</h3>
             <p>Pandas and NumPy pipelines for cleaning, feature engineering, and reproducible analysis.</p>
           </article>
-          <article class="skill card">
+          <article class="skill-card">
             <h3>Data Visualization</h3>
             <p>Matplotlib, Seaborn, Plotly, and story-driven analytics communication.</p>
           </article>
-          <article class="skill card">
+          <article class="skill-card">
             <h3>Production Stack</h3>
             <p>FastAPI, Flask, Docker, GitHub, and cloud-ready deployment workflows.</p>
           </article>
@@ -129,16 +163,22 @@
       </div>
     </section>
 
-    <section id="projects" class="section section-alt" aria-labelledby="projects-heading">
+    <div class="m-stripe-divider" aria-hidden="true"></div>
+
+    <section id="projects" class="section" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section-title">
+          <p class="label-uppercase">Portfolio</p>
           <h2 id="projects-heading">Featured Projects</h2>
           <p>Selected projects across ML experimentation, APIs, and security systems.</p>
         </div>
         <div class="projects-grid">
-          <article class="project card">
-            <img src="images/project-smart-fridge.png" alt="Smart Fridge food classifier confusion matrix preview" width="800" height="420" loading="lazy">
-            <div class="project-content">
+          <article class="feature-photo-card">
+            <div class="card-image">
+              <img src="images/project-smart-fridge.png" alt="Smart Fridge food classifier confusion matrix preview" width="800" height="420" loading="lazy">
+            </div>
+            <div class="card-body">
+              <p class="label-uppercase">Computer Vision</p>
               <h3>Smart Fridge — Food Recognition</h3>
               <p>Fine-tuned ResNet50 that classifies 40 fridge and pantry items (~94% validation accuracy) with a live upload demo.</p>
               <p class="project-tags">PyTorch · ResNet50 · Gradio · Roboflow</p>
@@ -149,9 +189,12 @@
             </div>
           </article>
 
-          <article class="project card">
-            <img src="images/project-mnist.png" alt="MNIST dual model demo preview" width="800" height="420" loading="lazy">
-            <div class="project-content">
+          <article class="feature-photo-card">
+            <div class="card-image">
+              <img src="images/project-mnist.png" alt="MNIST dual model demo preview" width="800" height="420" loading="lazy">
+            </div>
+            <div class="card-body">
+              <p class="label-uppercase">Deep Learning</p>
               <h3>MNIST Dual Model Demo</h3>
               <p>Compared a least-squares classifier and a ResNet CNN with a FastAPI backend and live drawing input.</p>
               <p class="project-tags">PyTorch · FastAPI · Docker · Hugging Face</p>
@@ -162,10 +205,13 @@
             </div>
           </article>
 
-          <article class="project card">
-            <img src="images/project-svm.png" alt="SVM and neural network classifier preview" width="800" height="420" loading="lazy">
-            <div class="project-content">
-              <h3>SVM & Neural Network Classifier</h3>
+          <article class="feature-photo-card">
+            <div class="card-image">
+              <img src="images/project-svm.png" alt="SVM and neural network classifier preview" width="800" height="420" loading="lazy">
+            </div>
+            <div class="card-body">
+              <p class="label-uppercase">Classical ML</p>
+              <h3>SVM &amp; Neural Network Classifier</h3>
               <p>Evaluated classical ML and ANN classifiers with hyperparameter experiments and performance reporting.</p>
               <p class="project-tags">Python · Scikit-learn · SVM · ANN</p>
               <div class="project-actions">
@@ -175,10 +221,13 @@
             </div>
           </article>
 
-          <article class="project card">
-            <img src="images/project-access.svg" alt="MFA and access control API preview" width="800" height="420" loading="lazy">
-            <div class="project-content">
-              <h3>MFA & Role-Based Access Control API</h3>
+          <article class="feature-photo-card">
+            <div class="card-image">
+              <img src="images/project-access.svg" alt="MFA and access control API preview" width="800" height="420" loading="lazy">
+            </div>
+            <div class="card-body">
+              <p class="label-uppercase">Security</p>
+              <h3>MFA &amp; Role-Based Access Control API</h3>
               <p>Built a Flask API with MFA, secure password handling, and Biba-model integrity controls across resources.</p>
               <p class="project-tags">Python · Flask · Security · Bcrypt</p>
               <div class="project-actions">
@@ -190,15 +239,24 @@
       </div>
     </section>
 
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Let's Build Something</h2>
+        <p class="lead">Open to internships, graduate roles, and collaborative AI projects.</p>
+        <a href="#contact" class="button-primary-outline">Get In Touch</a>
+      </div>
+    </section>
+
     <section id="contact" class="section" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-title">
+          <p class="label-uppercase">Connect</p>
           <h2 id="contact-heading">Contact</h2>
-          <p>Let’s collaborate on data science and AI opportunities.</p>
+          <p>Let's collaborate on data science and AI opportunities.</p>
         </div>
         <div class="contact-grid">
           <article class="card contact-info">
-            <h3>Reach me directly</h3>
+            <h3>Reach Me Directly</h3>
             <p>
               <a href="mailto:tiennguyen30122003@gmail.com" class="contact-link">
                 <img src="images/icon-mail.svg" alt="" width="20" height="20" loading="lazy">
@@ -220,7 +278,7 @@
           </article>
 
           <article class="card contact-form-wrap">
-            <h3>Send a message</h3>
+            <h3>Send a Message</h3>
             <form id="contact-form" class="contact-form" action="https://formspree.io/f/myzevjvw" method="POST" novalidate>
               <div class="form-group">
                 <label for="name" class="form-label">Name</label>
@@ -238,7 +296,7 @@
                 <label for="message" class="form-label">Message</label>
                 <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
               </div>
-              <button type="submit" class="btn">Send message</button>
+              <button type="submit" class="button-primary">Send Message</button>
               <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
             </form>
           </article>
@@ -248,19 +306,55 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="social-links" aria-label="Social profiles">
-        <a href="mailto:tiennguyen30122003@gmail.com" aria-label="Email Harry Nguyen">
-          <img src="images/icon-mail.svg" alt="" width="24" height="24" loading="lazy">
-        </a>
-        <a href="https://www.linkedin.com/in/mtiennguyen/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-          <img src="images/icon-linkedin.svg" alt="" width="24" height="24" loading="lazy">
-        </a>
-        <a href="https://github.com/HarryNguyen30" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-          <img src="images/icon-github.svg" alt="" width="24" height="24" loading="lazy">
-        </a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="#home" aria-label="Go to homepage">
+            <span class="logo-stripe" aria-hidden="true"></span>
+            Harry Nguyen
+          </a>
+          <p>Data Scientist &amp; AI Engineer building practical machine learning systems.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:tiennguyen30122003@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/mtiennguyen/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/HarryNguyen30" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="https://huggingface.co/spaces/MinhTien30122003/smart-fridge" target="_blank" rel="noopener noreferrer">Smart Fridge</a></li>
+            <li><a href="https://huggingface.co/spaces/MinhTien30122003/MNIST_Demo" target="_blank" rel="noopener noreferrer">MNIST Demo</a></li>
+            <li><a href="https://github.com/HarryNguyen30/Security_Access-control" target="_blank" rel="noopener noreferrer">Access Control API</a></li>
+          </ul>
+        </div>
       </div>
-      <p>&copy; 2026 Harry Nguyen. Built with HTML, CSS, and JavaScript.</p>
+      <div class="footer-bottom">
+        <div class="social-links" aria-label="Social profiles">
+          <a href="mailto:tiennguyen30122003@gmail.com" class="button-icon" aria-label="Email Harry Nguyen">
+            <img src="images/icon-mail.svg" alt="" width="20" height="20" loading="lazy">
+          </a>
+          <a href="https://www.linkedin.com/in/mtiennguyen/" target="_blank" rel="noopener noreferrer" class="button-icon" aria-label="LinkedIn profile">
+            <img src="images/icon-linkedin.svg" alt="" width="20" height="20" loading="lazy">
+          </a>
+          <a href="https://github.com/HarryNguyen30" target="_blank" rel="noopener noreferrer" class="button-icon" aria-label="GitHub profile">
+            <img src="images/icon-github.svg" alt="" width="20" height="20" loading="lazy">
+          </a>
+        </div>
+        <p>&copy; 2026 Harry Nguyen. Built with HTML, CSS, and JavaScript.</p>
+      </div>
     </div>
   </footer>
 
@@ -280,4 +374,3 @@
   <script src="static/js/main.js" defer></script>
 </body>
 </html>
-    

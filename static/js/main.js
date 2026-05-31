@@ -2,47 +2,25 @@
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
   const menuLinks = document.querySelectorAll(".menu a");
-  const binaryBg = document.querySelector(".binary-bg");
   const contactForm = document.getElementById("contact-form");
   const statusMessage = document.getElementById("form-status");
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   if (menuToggle && menu) {
     menuToggle.addEventListener("click", () => {
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
       menuToggle.setAttribute("aria-expanded", String(!isExpanded));
       menu.classList.toggle("is-open", !isExpanded);
+      document.body.style.overflow = !isExpanded ? "hidden" : "";
     });
 
     menuLinks.forEach((link) => {
       link.addEventListener("click", () => {
         menuToggle.setAttribute("aria-expanded", "false");
         menu.classList.remove("is-open");
+        document.body.style.overflow = "";
       });
     });
   }
-
-  const buildBinaryBackground = () => {
-    if (!binaryBg || prefersReducedMotion.matches) {
-      return;
-    }
-
-    const columnCount = window.innerWidth < 780 ? 14 : 24;
-    binaryBg.textContent = "";
-
-    for (let index = 0; index < columnCount; index += 1) {
-      const column = document.createElement("div");
-      column.className = "binary-column";
-      column.style.left = `${(index / columnCount) * 100}%`;
-      column.style.animationDuration = `${7 + Math.random() * 6}s`;
-      column.style.animationDelay = `${Math.random() * 2}s`;
-      column.textContent = Array.from({ length: 18 }, () => Math.round(Math.random())).join("\n");
-      binaryBg.appendChild(column);
-    }
-  };
-
-  buildBinaryBackground();
-  window.addEventListener("resize", buildBinaryBackground);
 
   if (contactForm && statusMessage) {
     contactForm.addEventListener("submit", async (event) => {

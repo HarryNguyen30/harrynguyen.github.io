@@ -1,8 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="Access control project placeholder">
-  <rect width="800" height="420" fill="#1c3554"/>
-  <rect x="320" y="120" width="160" height="190" rx="18" fill="#00a8e8"/>
-  <path d="M355 120v-22c0-25 20-45 45-45s45 20 45 45v22" stroke="#ffffff" stroke-width="14" fill="none"/>
+  <rect width="800" height="420" fill="#0d0d0d"/>
+  <rect x="320" y="120" width="160" height="190" fill="none" stroke="#3c3c3c" stroke-width="2"/>
+  <path d="M355 120v-22c0-25 20-45 45-45s45 20 45 45v22" stroke="#ffffff" stroke-width="8" fill="none"/>
   <circle cx="400" cy="205" r="18" fill="#ffffff"/>
-  <rect x="393" y="220" width="14" height="40" rx="7" fill="#ffffff"/>
-  <text x="50%" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#ffffff">MFA Security API</text>
+  <rect x="393" y="220" width="14" height="40" fill="#ffffff"/>
+  <rect y="416" width="800" height="4" fill="url(#stripe)"/>
+  <defs>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0066b1"/>
+      <stop offset="33%" stop-color="#0066b1"/>
+      <stop offset="33%" stop-color="#1c69d4"/>
+      <stop offset="66%" stop-color="#1c69d4"/>
+      <stop offset="66%" stop-color="#e22718"/>
+      <stop offset="100%" stop-color="#e22718"/>
+    </linearGradient>
+  </defs>
+  <text x="50%" y="360" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="2">MFA SECURITY API</text>
 </svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0066b1" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#1c69d4" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#e22718" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0066b1"/>
+      <stop offset="33%" stop-color="#0066b1"/>
+      <stop offset="33%" stop-color="#1c69d4"/>
+      <stop offset="66%" stop-color="#1c69d4"/>
+      <stop offset="66%" stop-color="#e22718"/>
+      <stop offset="100%" stop-color="#e22718"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="#000000"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <rect width="1920" height="1080" fill="url(#rim)"/>
+  <rect y="1076" width="1920" height="4" fill="url(#stripe)"/>
+</svg>

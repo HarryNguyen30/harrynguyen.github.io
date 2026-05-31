@@ -1,11 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Portfolio social cover">
+  <rect width="1200" height="630" fill="#000000"/>
+  <rect y="626" width="1200" height="4" fill="url(#stripe)"/>
   <defs>
-    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#003459"/>
-      <stop offset="100%" stop-color="#007ea7"/>
+    <linearGradient id="stripe" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0066b1"/>
+      <stop offset="33%" stop-color="#0066b1"/>
+      <stop offset="33%" stop-color="#1c69d4"/>
+      <stop offset="66%" stop-color="#1c69d4"/>
+      <stop offset="66%" stop-color="#e22718"/>
+      <stop offset="100%" stop-color="#e22718"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#grad)"/>
-  <text x="80" y="260" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#ffffff">Harry Nguyen</text>
-  <text x="80" y="340" font-family="Arial, sans-serif" font-size="42" fill="#e0f2ff">Data Scientist &amp; AI Engineer</text>
+  <rect x="80" y="80" width="4" height="64" fill="url(#vstripe)"/>
+  <defs>
+    <linearGradient id="vstripe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0066b1"/>
+      <stop offset="50%" stop-color="#1c69d4"/>
+      <stop offset="100%" stop-color="#e22718"/>
+    </linearGradient>
+  </defs>
+  <text x="104" y="200" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff" letter-spacing="-1">HARRY NGUYEN</text>
+  <text x="104" y="270" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="300" fill="#bbbbbb">Data Scientist &amp; AI Engineer</text>
 </svg>
