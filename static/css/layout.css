@@ -100,9 +100,12 @@
 
 .hero-photo-band .hero-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: minmax(0, 36rem) minmax(0, 20rem);
   gap: var(--spacing-xxl);
   align-items: end;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
 }
 
 .hero-content h1 {
