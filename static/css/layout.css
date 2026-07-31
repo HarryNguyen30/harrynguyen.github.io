@@ -11,8 +11,13 @@
   border-top: 1px solid var(--color-hairline);
 }
 
+.section-metrics {
+  padding-block: var(--spacing-xxl);
+}
+
 .section-title {
   margin-bottom: var(--spacing-xxl);
+  max-width: 58ch;
 }
 
 .section-title .label-uppercase {
@@ -24,7 +29,6 @@
 }
 
 .section-title p {
-  max-width: 58ch;
   font-size: var(--text-title-sm);
   font-weight: 300;
   color: var(--color-body);
@@ -53,10 +57,9 @@
   gap: var(--spacing-lg);
 }
 
-/* Hero Photo Band */
+/* Hero Photo Band - full-bleed product screenshot, left-aligned brand */
 .hero-photo-band {
   position: relative;
-  min-height: calc(100vh - 64px);
   min-height: calc(100dvh - 64px);
   display: flex;
   align-items: flex-end;
@@ -67,17 +70,13 @@
 .hero-photo-band .hero-media {
   position: absolute;
   inset: 0;
-  background-color: var(--color-canvas);
-  background-image:
-    linear-gradient(
-      135deg,
-      rgba(0, 102, 177, 0.15) 0%,
-      rgba(28, 105, 212, 0.08) 50%,
-      rgba(226, 39, 24, 0.12) 100%
-    ),
-    linear-gradient(var(--color-surface-card) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-surface-card) 1px, transparent 1px);
-  background-size: 100% 100%, 80px 80px, 80px 80px;
+}
+
+.hero-photo-band .hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .hero-photo-band .hero-overlay {
@@ -85,9 +84,9 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.5) 45%,
-    rgba(0, 0, 0, 0.25) 100%
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.62) 42%,
+    rgba(0, 0, 0, 0.28) 100%
   );
 }
 
@@ -98,22 +97,22 @@
   padding-block: var(--spacing-xxl);
 }
 
-.hero-photo-band .hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 36rem) minmax(0, 20rem);
-  gap: var(--spacing-xxl);
-  align-items: end;
-  width: fit-content;
-  max-width: 100%;
-  margin-inline: auto;
+.hero-availability {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-body);
 }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-photo-band h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-photo-band .m-stripe-divider--short {
   margin-bottom: var(--spacing-lg);
 }
 
-.hero-content .lead {
-  max-width: 52ch;
+.hero-photo-band .lead {
+  max-width: 36ch;
   font-size: var(--text-body-md);
   font-weight: 300;
   color: var(--color-body-strong);
@@ -126,25 +125,6 @@
   flex-wrap: wrap;
   gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
-}
-
-.hero-aside {
-  background: var(--color-surface-card);
-  border: 1px solid var(--color-hairline);
-  padding: var(--spacing-lg);
-}
-
-.hero-facts {
-  display: grid;
-  gap: var(--spacing-sm);
-}
-
-.hero-facts li {
-  font-size: var(--text-body-sm);
-  font-weight: 300;
-  color: var(--color-body);
-  padding-left: var(--spacing-md);
-  border-left: 2px solid var(--color-hairline);
 }
 
 /* Grids */
@@ -162,10 +142,35 @@
   border: 1px solid var(--color-hairline);
 }
 
-.skills-grid {
+.skills-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--spacing-lg);
+  border-top: 1px solid var(--color-hairline);
+}
+
+.skills-strip li {
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-xl) 0;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.skills-strip li:nth-child(even) {
+  padding-left: var(--spacing-lg);
+  border-left: 1px solid var(--color-hairline);
+}
+
+.skills-strip h3 {
+  text-transform: none;
+  margin-bottom: var(--spacing-sm);
+}
+
+.skills-strip p {
+  font-weight: 300;
+  color: var(--color-body);
+  max-width: 42ch;
+}
+
+.feature-photo-card--featured {
+  margin-bottom: var(--spacing-lg);
 }
 
 .projects-grid {
@@ -191,11 +196,11 @@
 }
 
 .cta-band h2 {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 .cta-band .lead {
-  max-width: 48ch;
+  max-width: 40ch;
   margin-inline: auto;
   margin-bottom: var(--spacing-xl);
   font-weight: 300;
@@ -243,6 +248,7 @@
   font-size: var(--text-body-sm);
   font-weight: 300;
   color: var(--color-muted);
+  transition: color var(--duration-base) var(--ease-out);
 }
 
 .footer-col a:hover,
@@ -286,17 +292,22 @@
   }
 
   .hero-photo-band {
-    min-height: auto;
+    min-height: calc(100dvh - 64px);
   }
 
-  .hero-photo-band .hero-grid,
   .about-grid,
-  .skills-grid,
   .projects-grid,
   .spec-grid,
   .contact-grid,
-  .footer-grid {
+  .footer-grid,
+  .skills-strip {
     grid-template-columns: 1fr;
+  }
+
+  .skills-strip li,
+  .skills-strip li:nth-child(even) {
+    padding: var(--spacing-lg) 0;
+    border-left: 0;
   }
 
   .footer-grid {

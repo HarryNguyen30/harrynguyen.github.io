@@ -14,7 +14,7 @@ Static portfolio website for Harry (Minh Tien) Nguyen.
 - `static/css/theme.css`: Design tokens and global base styles
 - `static/css/layout.css`: Page layout and responsive grid structure
 - `static/css/components.css`: Reusable UI components and accessibility states
-- `static/js/main.js`: Mobile navigation, binary background, and contact form logic
+- `static/js/main.js`: Mobile navigation, scroll reveal, active section nav, and contact form logic
 - `images/`: Icons, social-preview image, and section placeholders
 
 ## Local preview
