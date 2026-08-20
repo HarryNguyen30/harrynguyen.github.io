@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Rozelle Air Quality Forecast | Harry Nguyen</title>
+  <meta name="description" content="Hourly PM2.5 forecasting at Rozelle, NSW. LSTM, Bidirectional LSTM, and GRU comparison with GRU best at RMSE 2.68 and R2 0.658.">
+  <link rel="canonical" href="https://harrynguyen30.github.io/harrynguyen.github.io/projects/air-quality/">
+  <link rel="icon" type="image/svg+xml" href="../../images/profile.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="../../static/css/theme.css">
+  <link rel="stylesheet" href="../../static/css/layout.css">
+  <link rel="stylesheet" href="../../static/css/components.css">
+  <style>
+    .report-intro {
+      padding-block: var(--spacing-xl);
+      border-bottom: 1px solid var(--color-hairline);
+    }
+
+    .report-intro h1 {
+      font-size: var(--text-display-sm);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .report-intro .lead {
+      max-width: 62ch;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .report-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1px;
+      margin-bottom: var(--spacing-lg);
+      background: var(--color-hairline);
+      border: 1px solid var(--color-hairline);
+      max-width: 42rem;
+    }
+
+    .report-metrics .spec-cell {
+      flex: 1 1 8rem;
+    }
+
+    .report-frame-wrap {
+      background: #fff;
+      border-top: 1px solid var(--color-hairline);
+    }
+
+    .report-frame {
+      display: block;
+      width: 100%;
+      min-height: calc(100dvh - 64px);
+      height: 85dvh;
+      border: 0;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#report-frame">Skip to report</a>
+
+  <header class="top-nav">
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="logo" href="../../index.html" aria-label="Back to homepage">
+          <span class="logo-stripe" aria-hidden="true"></span>
+          Harry Nguyen
+        </a>
+        <ul class="menu">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../index.html#projects">Projects</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="report-intro">
+      <div class="container">
+        <p class="label-uppercase">Time Series</p>
+        <h1>Rozelle Air Quality Forecast</h1>
+        <p class="lead">
+          Hourly PM2.5 forecasting from NSW monitoring data. Compared LSTM, Bidirectional LSTM, and GRU on a 48-hour lookback.
+        </p>
+        <div class="report-metrics">
+          <div class="spec-cell">
+            <p class="spec-value">GRU</p>
+            <p class="spec-label">Best model</p>
+          </div>
+          <div class="spec-cell">
+            <p class="spec-value">2.68</p>
+            <p class="spec-label">RMSE</p>
+          </div>
+          <div class="spec-cell">
+            <p class="spec-value">0.658</p>
+            <p class="spec-label">R²</p>
+          </div>
+        </div>
+        <a href="https://github.com/HarryNguyen30/AirQualityForecast" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
+      </div>
+    </section>
+
+    <div class="report-frame-wrap">
+      <iframe
+        id="report-frame"
+        class="report-frame"
+        title="Rozelle air quality analysis notebook"
+        src="notebook.html"
+      ></iframe>
+    </div>
+  </main>
+</body>
+</html>
