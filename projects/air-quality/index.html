@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="dark">
   <title>Rozelle Air Quality Forecast | Harry Nguyen</title>
-  <meta name="description" content="Hourly PM2.5 forecasting at Rozelle, NSW. LSTM, Bidirectional LSTM, and GRU comparison with GRU best at RMSE 2.68 and R2 0.658.">
+  <meta name="description" content="Hourly PM2.5 forecasting at Rozelle, NSW. LSTM, Bidirectional LSTM, and GRU comparison. GRU best at RMSE 2.68 and R2 0.658.">
   <link rel="canonical" href="https://harrynguyen30.github.io/harrynguyen.github.io/projects/air-quality/">
   <link rel="icon" type="image/svg+xml" href="../../images/profile.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,53 +14,10 @@
   <link rel="stylesheet" href="../../static/css/theme.css">
   <link rel="stylesheet" href="../../static/css/layout.css">
   <link rel="stylesheet" href="../../static/css/components.css">
-  <style>
-    .report-intro {
-      padding-block: var(--spacing-xl);
-      border-bottom: 1px solid var(--color-hairline);
-    }
-
-    .report-intro h1 {
-      font-size: var(--text-display-sm);
-      margin-bottom: var(--spacing-sm);
-    }
-
-    .report-intro .lead {
-      max-width: 62ch;
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .report-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1px;
-      margin-bottom: var(--spacing-lg);
-      background: var(--color-hairline);
-      border: 1px solid var(--color-hairline);
-      max-width: 42rem;
-    }
-
-    .report-metrics .spec-cell {
-      flex: 1 1 8rem;
-    }
-
-    .report-frame-wrap {
-      background: #fff;
-      border-top: 1px solid var(--color-hairline);
-    }
-
-    .report-frame {
-      display: block;
-      width: 100%;
-      min-height: calc(100dvh - 64px);
-      height: 85dvh;
-      border: 0;
-      background: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="../../static/css/report.css">
 </head>
 <body>
-  <a class="skip-link" href="#report-frame">Skip to report</a>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="top-nav">
     <div class="container">
@@ -69,8 +26,13 @@
           <span class="logo-stripe" aria-hidden="true"></span>
           Harry Nguyen
         </a>
-        <ul class="menu">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-list">
+          <span class="menu-icon" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation menu</span>
+        </button>
+        <ul class="menu" id="menu-list">
           <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../index.html#about">About</a></li>
           <li><a href="../../index.html#projects">Projects</a></li>
           <li><a href="../../index.html#contact">Contact</a></li>
         </ul>
@@ -78,40 +40,234 @@
     </div>
   </header>
 
-  <main>
-    <section class="report-intro">
+  <main id="main-content">
+    <section class="hero-photo-band" aria-labelledby="report-heading">
+      <div class="hero-media" aria-hidden="true">
+        <img
+          src="assets/gru-test.png"
+          alt=""
+          width="1600"
+          height="900"
+          fetchpriority="high"
+        >
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-inner container">
+        <p class="label-uppercase hero-availability">Time Series</p>
+        <h1 id="report-heading">Rozelle Air Quality</h1>
+        <div class="m-stripe-divider m-stripe-divider--short" aria-hidden="true"></div>
+        <p class="lead">Hourly PM2.5 forecasts from NSW monitoring data at Rozelle.</p>
+        <div class="hero-cta">
+          <a href="https://github.com/HarryNguyen30/AirQualityForecast" class="button-primary" target="_blank" rel="noopener noreferrer">View Code</a>
+          <a href="../../index.html#projects" class="button-primary-outline">All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-metrics" aria-label="Model results">
       <div class="container">
-        <p class="label-uppercase">Time Series</p>
-        <h1>Rozelle Air Quality Forecast</h1>
-        <p class="lead">
-          Hourly PM2.5 forecasting from NSW monitoring data. Compared LSTM, Bidirectional LSTM, and GRU on a 48-hour lookback.
-        </p>
-        <div class="report-metrics">
+        <div class="spec-grid reveal">
           <div class="spec-cell">
             <p class="spec-value">GRU</p>
             <p class="spec-label">Best model</p>
           </div>
           <div class="spec-cell">
             <p class="spec-value">2.68</p>
-            <p class="spec-label">RMSE</p>
+            <p class="spec-label">Test RMSE</p>
           </div>
           <div class="spec-cell">
             <p class="spec-value">0.658</p>
-            <p class="spec-label">R²</p>
+            <p class="spec-label">Test R²</p>
+          </div>
+          <div class="spec-cell">
+            <p class="spec-value">8,711</p>
+            <p class="spec-label">Hourly records</p>
           </div>
         </div>
-        <a href="https://github.com/HarryNguyen30/AirQualityForecast" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
       </div>
     </section>
 
-    <div class="report-frame-wrap">
-      <iframe
-        id="report-frame"
-        class="report-frame"
-        title="Rozelle air quality analysis notebook"
-        src="notebook.html"
-      ></iframe>
-    </div>
+    <section class="section" aria-labelledby="problem-heading">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2 id="problem-heading">The Question</h2>
+          <p>Can a recurrent model forecast the next hour of PM2.5 from a year of hourly air-quality readings at Rozelle?</p>
+        </div>
+        <div class="report-copy reveal">
+          <p>
+            The series runs from 11 Nov 2024 to 10 Nov 2025 (8,711 hours, 18 variables). After correcting 24:00 timestamps, forward-filling gaps, and clipping negative pollutant readings, Grey Relational Analysis ranked the inputs. Modeling used NEPH, PM10, PM2.5, SO2, NO2, CO, NO, and RAIN.
+          </p>
+          <p>
+            Each sample is 48 hours of scaled history predicting the next hour of PM2.5. The split is chronological: 80% train, 20% test. LSTM, Bidirectional LSTM, and GRU were trained with early stopping (up to 150 epochs).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="eda-heading">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2 id="eda-heading">Daily Pattern</h2>
+          <p>PM2.5 at Rozelle dips before dawn, rises through the morning, and peaks again late evening.</p>
+        </div>
+        <figure class="figure-frame reveal">
+          <img src="assets/daily-cycle.png" alt="Line chart of mean PM2.5 by hour of day at Rozelle" width="1200" height="700" loading="lazy">
+        </figure>
+        <p class="figure-caption">Hourly mean PM2.5 at Rozelle. Lowest around 04:00, highest near 10:00 and 22:00.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="corr-heading">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2 id="corr-heading">What Moves Together</h2>
+          <p>NEPH tracks PM2.5 most closely among the co-pollutants. Ozone runs against NO2, as expected in photochemistry.</p>
+        </div>
+        <figure class="figure-frame reveal">
+          <img src="assets/correlation.png" alt="Correlation heatmap of Rozelle environmental variables" width="900" height="800" loading="lazy">
+        </figure>
+        <p class="figure-caption">Pearson correlations across the monitoring variables.</p>
+      </div>
+    </section>
+
+    <div class="m-stripe-divider" aria-hidden="true"></div>
+
+    <section class="section" aria-labelledby="method-heading">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2 id="method-heading">Training Setup</h2>
+          <p>Same features, same split, three recurrent architectures.</p>
+        </div>
+        <ul class="skills-strip reveal">
+          <li>
+            <h3>Clean</h3>
+            <p>Fix 24:00 hours, forward-fill missing values, set negative pollutant readings to zero.</p>
+          </li>
+          <li>
+            <h3>Rank</h3>
+            <p>Grey Relational Analysis keeps the eight series most related to the PM2.5 target.</p>
+          </li>
+          <li>
+            <h3>Sequence</h3>
+            <p>MinMax scaling, then 48-step windows. Train on the first 80% of time, test on the last 20%.</p>
+          </li>
+          <li>
+            <h3>Train</h3>
+            <p>LSTM, BiLSTM, and GRU with Adam, dropout, batch norm, and early stopping on validation loss.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="results-heading">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2 id="results-heading">GRU Held the Test Set</h2>
+          <p>Lowest RMSE and highest R² on next-hour PM2.5. Spikes are still hard, but the baseline level tracks.</p>
+        </div>
+        <div class="results-table-wrap reveal">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>RMSE</th>
+                <th>R²</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LSTM</td>
+                <td>2.84</td>
+                <td>0.616</td>
+              </tr>
+              <tr>
+                <td>Bidirectional LSTM</td>
+                <td>2.77</td>
+                <td>0.635</td>
+              </tr>
+              <tr class="is-best">
+                <td>GRU</td>
+                <td>2.68</td>
+                <td>0.658</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="figure-frame reveal">
+          <img src="assets/gru-test.png" alt="GRU predicted versus actual PM2.5 on the test set" width="1600" height="900" loading="lazy">
+        </figure>
+        <p class="figure-caption">GRU on the held-out window. The model follows the day-to-day level; sharp peaks are underestimated.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="forecast-heading">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2 id="forecast-heading">Next 24 Hours</h2>
+          <p>Rolled forward from the last observation. The GRU forecast settles near 5.8 µg/m³ after the first few hours.</p>
+        </div>
+        <figure class="figure-frame reveal">
+          <img src="assets/gru-forecast.png" alt="GRU 24-hour PM2.5 forecast at Rozelle" width="1200" height="600" loading="lazy">
+        </figure>
+        <p class="figure-caption">24-hour GRU forecast from 11 Nov 2025 00:00.</p>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="../../index.html" aria-label="Go to homepage">
+            <span class="logo-stripe" aria-hidden="true"></span>
+            Harry Nguyen
+          </a>
+          <p>Data Scientist and AI Engineer building practical machine learning systems.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html#about">About</a></li>
+            <li><a href="../../index.html#skills">Skills</a></li>
+            <li><a href="../../index.html#projects">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:tiennguyen30122003@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/mtiennguyen/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/HarryNguyen30" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="https://huggingface.co/spaces/MinhTien30122003/smart-fridge" target="_blank" rel="noopener noreferrer">Smart Fridge</a></li>
+            <li><a href="./">Air Quality Forecast</a></li>
+            <li><a href="https://huggingface.co/spaces/MinhTien30122003/MNIST_Demo" target="_blank" rel="noopener noreferrer">MNIST Demo</a></li>
+            <li><a href="https://github.com/HarryNguyen30/Security_Access-control" target="_blank" rel="noopener noreferrer">Access Control API</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="social-links" aria-label="Social profiles">
+          <a href="mailto:tiennguyen30122003@gmail.com" class="button-icon" aria-label="Email Harry Nguyen">
+            <img src="../../images/icon-mail.svg" alt="" width="20" height="20" loading="lazy">
+          </a>
+          <a href="https://www.linkedin.com/in/mtiennguyen/" target="_blank" rel="noopener noreferrer" class="button-icon" aria-label="LinkedIn profile">
+            <img src="../../images/icon-linkedin.svg" alt="" width="20" height="20" loading="lazy">
+          </a>
+          <a href="https://github.com/HarryNguyen30" target="_blank" rel="noopener noreferrer" class="button-icon" aria-label="GitHub profile">
+            <img src="../../images/icon-github.svg" alt="" width="20" height="20" loading="lazy">
+          </a>
+        </div>
+        <p>&copy; 2026 Harry Nguyen. Built with HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../static/js/main.js" defer></script>
 </body>
 </html>

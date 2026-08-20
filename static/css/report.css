@@ -1,0 +1,74 @@
+/* Case-study report page (air quality and similar project writeups) */
+
+.figure-frame {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-hairline);
+  padding: var(--spacing-sm);
+}
+
+.figure-frame img {
+  width: 100%;
+  height: auto;
+  background: #fff;
+}
+
+.figure-caption {
+  margin-top: var(--spacing-sm);
+  font-size: var(--text-caption);
+  font-weight: 400;
+  color: var(--color-muted);
+  letter-spacing: 0.5px;
+  max-width: 65ch;
+}
+
+.results-table-wrap {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-xl);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.results-table th,
+.results-table td {
+  text-align: left;
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.results-table th {
+  font-family: var(--font-display);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.results-table td {
+  font-weight: 300;
+  color: var(--color-body-strong);
+}
+
+.results-table tr.is-best td {
+  color: var(--color-on-dark);
+  font-weight: 700;
+}
+
+.report-copy {
+  max-width: 62ch;
+}
+
+.report-copy p {
+  font-weight: 300;
+  color: var(--color-body);
+}
+
+@media (max-width: 768px) {
+  .results-table {
+    min-width: 20rem;
+  }
+}
